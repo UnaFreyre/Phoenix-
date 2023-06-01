@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - web_app</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/web_app.styles.css" asp-append-version="true" />
+    <!-- Favicons -->
+    <link href="favicon/favicon-16x16.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Google Fontes -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CRaleway:300,300i,400,400i,500,500i,600,600i,700,700i%7CPoppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Arquivos -->
+    <link href="~/lib/bootstrap/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/aos/aos.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS Arquivo -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/tabela.css">
+</head>
+<body>
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><img src="~/lib/icon/android-chrome-192x192.png" alt="" class="img-fluid"><a
+                    href="index.html">Phoenix</a></h1>
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="active color-teste" href="index.html">Home</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <!-- .navbar -->
+
+            <a href="login.html" class="get-started-btn backgroud-teste">Login</a>
+
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <main>
+        <!-- ======= Caixa ======= -->
+        <section id="why-us" class="why-us">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row">
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="content">
+                            <h3>Administrador</h3>
+                            <img src="assets/img/perfilanon.jpeg" alt="">
+                            <p>Nome do ADM:</p>
+                            <p>Código:</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-boxes d-flex flex-column justify-content-center">
+                            <div class="row">
+                                <div class="col-xl-4 d-flex align-items-stretch">
+                                    <div class="icon-box mt-4 mt-xl-0">
+                                        <i class="bx bx-receipt bx caixa1"></i>
+                                        <h4>Cadastrar Cursos:</h4>
+                                        <button type="button" onclick="" class="btn btn-dark acessar">Cadastrar</button>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-flex align-items-stretch">
+                                    <div class="icon-box mt-4 mt-xl-0">
+                                        <i class="bx bx-receipt bx caixa1"></i>
+                                        <h4>Cadastrar Turmas:</h4>
+                                        <button type="button" onclick="" class="btn btn-dark acessar">Cadastrar</button>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-flex align-items-stretch">
+                                    <div class="icon-box mt-4 mt-xl-0">
+                                        <i class="bx bx-images bx caixa1"></i>
+                                        <h4>Gerenciar Cargos:</h4>
+                                        <button type="button" onclick="" class="btn btn-dark acessar">Gerenciar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- Fim da .content-->
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- Fim da Caixa -->
+        <!-- ======= Seção de Recursos ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="icon-box">
+                            <i class="ri-file-list-3-line" style="color: #ffbb2c;"></i>
+                            <h3><a href="">Modificar Documentos</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <i class="ri-file-list-3-line" style="color: #5578ff;"></i>
+                            <h3><a href="">Modificar Registros</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <i class="ri-file-list-3-line" style="color: #e80368;"></i>
+                            <h3><a href="">Quadro de Avisos</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <i class="ri-file-list-3-line" style="color: #e361ff;"></i>
+                            <h3><a href="">Turmas</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <i class="ri-file-list-3-line" style="color: #47aeff;"></i>
+                            <h3><a href="">Alterações de Login</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <i class="ri-file-list-3-line" style="color: #bd43a8;"></i>
+                            <h3><a href="">Solicitações pendentes</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <i class="ri-file-list-3-line" style="color: #ff5828;"></i>
+                            <h3><a href="">Modificação de Permissões</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
+                            <h3><a href="">E-mails</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fim da Seção de Recursos -->
+    </main>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - web_app - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Contato</h3>
+                        <p>
+                            Av. Habib Gabriel, 1360 - Jardim Buscardi, Matão <br>
+                            São Paulo, SP ,15990-539<br>
+                            Brasil <br><br>
+                            <strong>Telefone:</strong> +55 16 2016-2694<br>
+                            <strong>Email:</strong> contatophoenix@gmail.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Informações</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre Nós</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Serviços</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Termos de uso</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Politica de Privacidade</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Nossos serviços</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Desenvolvimento Web</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Engenharia de Software</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Design Gráfico</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Se inscreva no nosso Newsletter</h4>
+                        <p>Receba novidades e promoções.</p>
+                        <form method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container d-md-flex py-4">
+
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Phoenix</span></strong>. Todos os direitos reservados.
+                </div>
+                <div class="credits">
+                    Designed by <a href="#">Team 6</a>
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+</body>
+</html>
