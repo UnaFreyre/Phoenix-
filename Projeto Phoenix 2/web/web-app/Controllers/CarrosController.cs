@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using web_app.Filters;
 
 namespace web_app.Controllers
 {
+    [UsuarioLogado]
     public class CarrosController : Controller
     {
         private readonly Repositories.ADO.SQLServer.Carro repository;
