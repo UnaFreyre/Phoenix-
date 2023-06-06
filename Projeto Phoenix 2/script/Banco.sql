@@ -24,14 +24,14 @@ FOREIGN KEY (TipoLoginID) REFERENCES TipoLogin (TipoLoginID);
 
 CREATE TABLE Curso (
   CursoID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-  Nome VARCHAR(50) NOT NULL
+  Nome VARCHAR(50) NOT NULL,
+  ProfessorID int foreign key references Professor(ProfessorID)
 );
 
 
 CREATE TABLE Professor (
   ProfessorID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
   Nome VARCHAR(50) NOT NULL,
-  CursoID INT FOREIGN KEY REFERENCES Curso(CursoID),
   LoginID INT FOREIGN KEY REFERENCES Login(LoginID)
 );
 
@@ -55,6 +55,3 @@ CREATE TABLE Estudante (
   CursoID INT FOREIGN KEY REFERENCES Curso(CursoID),
   LoginID INT FOREIGN KEY REFERENCES Login(LoginID)
 );
-
-
-

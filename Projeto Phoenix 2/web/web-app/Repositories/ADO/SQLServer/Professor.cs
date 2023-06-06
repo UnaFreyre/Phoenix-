@@ -21,10 +21,9 @@ namespace web_app.Repositories.ADO.SQLServer
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "insert into Professor (nome, cursoid, loginid) values (@nome,@cursoid,@loginid); select convert(int,@@identity) as professorid;;";
+                    command.CommandText = "insert into Professor (nome, loginid) values (@nome,@loginid); select convert(int,@@identity) as professorid;;";
 
                     command.Parameters.Add(new SqlParameter("@nome", System.Data.SqlDbType.VarChar)).Value = Professor.Nome;
-                    command.Parameters.Add(new SqlParameter("@cursoid", System.Data.SqlDbType.VarChar)).Value = Professor.CursoID;
                     command.Parameters.Add(new SqlParameter("@loginid", System.Data.SqlDbType.Date)).Value = Professor.LoginID;
 
                     Professor.ProfessorID = (int)command.ExecuteScalar(); // o homem do saco leva os dados até o sgbd e volta com o valor do id => ExecuteScalar retorna um único valor. Observe que o CommandText foi alterado com mais uma instrução. Então, as duas instruções são executadas e temos como retorno o valor do id que foi gerado pelo sgbd na tabela Professor. Assim, conseguimos atualizar o valor do id do objeto Professor que antes da inserção era 0.
@@ -43,7 +42,7 @@ namespace web_app.Repositories.ADO.SQLServer
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select professorid, nome, cursoid, loginid from Professor;";
+                    command.CommandText = "select professorid, nome, loginid from Professor;";
 
                     SqlDataReader dr = command.ExecuteReader();
 
@@ -51,8 +50,7 @@ namespace web_app.Repositories.ADO.SQLServer
                     {
                         Models.Professor Professor = new Models.Professor();
                         Professor.ProfessorID = (int)dr["professorid"];
-                        Professor.Nome = dr["nome"].ToString();
-                        Professor.CursoID = (int)dr["cursoid"];
+                        Professor.Nome = (string)dr["nome"];
                         Professor.LoginID = (int)dr["loginid"];
                         Professores.Add(Professor);
                     }
@@ -90,16 +88,15 @@ namespace web_app.Repositories.ADO.SQLServer
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select id, nome, cor, dataFabricacao, valor from Professor where professorid=@professorid;";
-                    command.Parameters.Add(new SqlParameter("@id", System.Data.SqlDbType.Int)).Value = professorid;
+                    command.CommandText = "select professorid, nome,loginid from Professor where professorid=@professorid;";
+                    command.Parameters.Add(new SqlParameter("@professorid", System.Data.SqlDbType.Int)).Value = professorid;
 
                     SqlDataReader dr = command.ExecuteReader();
 
                     if (dr.Read())
                     {
                         Professor.ProfessorID = (int)dr["professorid"];
-                        Professor.Nome = dr["nome"].ToString();
-                        Professor.CursoID = (int)dr["cursoid"];
+                        Professor.Nome = (string)dr["nome"];
                         Professor.LoginID = (int)dr["loginid"];
                     }
                 }
@@ -117,10 +114,9 @@ namespace web_app.Repositories.ADO.SQLServer
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "update Professor set nome = @nome, cor = @cor, dataFabricacao = @dataFabricacao, valor = @valor where id=@id;";
+                    command.CommandText = "update Professor set nome = @nome, loginid = @loginid, professorid=@professorid;";
 
                     command.Parameters.Add(new SqlParameter("@nome", System.Data.SqlDbType.VarChar)).Value = Professor.Nome;
-                    command.Parameters.Add(new SqlParameter("@cursoid", System.Data.SqlDbType.VarChar)).Value = Professor.CursoID;
                     command.Parameters.Add(new SqlParameter("@loginid", System.Data.SqlDbType.Date)).Value = Professor.LoginID;
                     command.Parameters.Add(new SqlParameter("@professorid", System.Data.SqlDbType.Int)).Value = professorid;
 

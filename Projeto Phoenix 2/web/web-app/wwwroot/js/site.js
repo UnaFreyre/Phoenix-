@@ -1,4 +1,9 @@
-﻿(function () {
+﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+// for details on configuring this project to bundle and minify static web assets.
+
+// Write your JavaScript code.
+
+(function () {
     "use strict";
 
     /**
@@ -126,7 +131,7 @@
     new PureCounter();
 
 })()
-function validar() {
+/*function validar() {
     var username = document.getElementById("login").value;
     var password = document.getElementById("senha").value;
     if (username == "prof@prof" && password == "prof") {
@@ -143,7 +148,7 @@ function validar() {
     } else {
         return false;
     }
-}
+}*/
 function mostrar() {
     document.getElementsByClassName("escondido").style.display = "block";
 }

@@ -2,13 +2,15 @@
 {
     public class Login
     {
-        public string Usuario { get; set; }
-        public string Senha { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public int TipoLogin { get; set; }
 
         public Login()
         {
-            this.Usuario = string.Empty;
-            this.Senha = string.Empty;
+            this.Username = string.Empty;
+            this.Password = string.Empty;
+            this.TipoLogin = 0;
         }
     }
 }

@@ -21,9 +21,9 @@ namespace web_app.Repositories.ADO.SQLServer
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select id from login where usuario=@usuario and senha=@senha";
-                    command.Parameters.Add(new SqlParameter("@usuario", System.Data.SqlDbType.VarChar)).Value = login.Usuario;
-                    command.Parameters.Add(new SqlParameter("@senha", System.Data.SqlDbType.VarChar)).Value = login.Senha;
+                    command.CommandText = "select LoginID from login where username=@username and Password=@Password";
+                    command.Parameters.Add(new SqlParameter("@Username", System.Data.SqlDbType.VarChar)).Value = login.Username;
+                    command.Parameters.Add(new SqlParameter("@Password", System.Data.SqlDbType.VarChar)).Value = login.Password;
 
                     SqlDataReader dr = command.ExecuteReader();
                     result = dr.Read();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D90zYLjZ+/1aWrCv4gNMzOkqSKCRhQTZT9558D3IGEX6jOMmFtJw8j6kDszQxGBwhvyp/LzzozOPGeDb7aaHmw==",
+  "dgSpecHash": "BfHG982AmdlRG84j42lk6rX4vW612samFXRSVi9Y6/vaoj4Urb+MLie9r59clqDHO+GScwPXaRBcN5fyJNtrOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\2971392221021\\Documents\\mvc-web-T\\web\\web-app\\web-app.csproj",
+  "projectFilePath": "C:\\Users\\2971392221021\\Desktop\\hjk,\\Phoenix-\\Projeto Phoenix 2\\web\\modificacoes\\web-app\\web-app.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\2971392221021\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\2971392221021\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -10,31 +10,85 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/web_app.styles.css" asp-append-version="true" />
+    <!-- Favicons -->
+    <link href="favicon/favicon-16x16.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Google Fontes -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CRaleway:300,300i,400,400i,500,500i,600,600i,700,700i%7CPoppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Arquivos -->
+    <link href="~/lib/bootstrap/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/aos/aos.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS Arquivo -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/tabela.css">
 </head>
 <body>
 
 <h4>Login</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Login">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto"><img src="favicon/android-chrome-192x192.png" alt="logo" class="img-fluid"><a href="index.html">Phoenix</a></h1>  
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a class="active color-teste" href="index.html">Home</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar --> 
+      </div>
+    </header><!-- End Header -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card border-0 shadow rounded-3 my-5">
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title text-center mb-5 fw-light fs-5">Entrar</h5>
+              <form asp-action="Login">
             <div class="form-group">
-                <label asp-for="Usuario" class="control-label"></label>
-                <input asp-for="Usuario" class="form-control" />
-                <span asp-validation-for="Usuario" class="text-danger"></span>
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Senha" class="control-label"></label>
-                <input asp-for="Senha" class="form-control" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
+  
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                  <label class="form-check-label" for="rememberPasswordCheck">
+                    Lembrar senha
+                  </label>
+                </div>
+                <div class="d-grid">
                 <input type="submit" value="Logar" class="btn btn-primary" />
+                </div>
+                <hr class="my-4">
+              </form>
             </div>
-        </form>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
