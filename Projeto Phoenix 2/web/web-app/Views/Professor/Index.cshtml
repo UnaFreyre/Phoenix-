@@ -13,7 +13,7 @@
             <div class="col-lg-4 d-flex align-items-stretch">
                 <div class="content">
                     <h3>Professor</h3>
-                    <img src="assets/img/perfilanon.jpeg" alt="">
+                    <img src="~/images/perfilanon.jpeg" alt="">
                     <p>Nome do ADM:</p>
                     <p>Código:</p>
                 </div>
@@ -23,21 +23,21 @@
                     <div class="row">
                         <div class="col-xl-4 d-flex align-items-stretch">
                             <div class="icon-box mt-4 mt-xl-0">
-                                <i class="bx bx-receipt bx caixa1"></i>
-                                <h4>Cadastrar Cursos:</h4>
-                                <button type="button" onclick="" class="btn btn-dark acessar">Cadastrar</button>
+                                <img src="~/images/fumaca.png" alt="">
+                                <h4>Cadastrar Professores:</h4>
+                                <a type="button" asp-action="create" class="btn btn-dark acessar mb-2">Cadastrar</a>
                             </div>
                         </div>
                         <div class="col-xl-4 d-flex align-items-stretch">
                             <div class="icon-box mt-4 mt-xl-0">
-                                <i class="bx bx-receipt bx caixa1"></i>
+                                <img src="~/images/fumaca.png" alt="">
                                 <h4>Cadastrar Turmas:</h4>
                                 <button type="button" onclick="" class="btn btn-dark acessar">Cadastrar</button>
                             </div>
                         </div>
                         <div class="col-xl-4 d-flex align-items-stretch">
                             <div class="icon-box mt-4 mt-xl-0">
-                                <i class="bx bx-images bx caixa1"></i>
+                                <img src="~/images/fumaca.png" alt="">
                                 <h4>Gerenciar Cargos:</h4>
                                 <button type="button" onclick="" class="btn btn-dark acessar">Gerenciar</button>
                             </div>
@@ -106,11 +106,6 @@
     </div>
 </section>
 <!-- Fim da Seção de Recursos -->
-<h1>Cadastro de Professor</h1>
-
-<p>
-    <a asp-action="Create">Cadastrar</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -136,15 +131,11 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CursoID)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.LoginID)
             </td>
             <td>
                     @Html.ActionLink("Edit", "Edit", new { professorid=item.ProfessorID }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Delete", "Delete", new { professorid=item.ProfessorID })
             </td>
         </tr>
 }

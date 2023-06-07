@@ -24,7 +24,7 @@ namespace web_app.Repositories.ADO.SQLServer
                     command.CommandText = "insert into Professor (nome, loginid) values (@nome,@loginid); select convert(int,@@identity) as professorid;;";
 
                     command.Parameters.Add(new SqlParameter("@nome", System.Data.SqlDbType.VarChar)).Value = Professor.Nome;
-                    command.Parameters.Add(new SqlParameter("@loginid", System.Data.SqlDbType.Date)).Value = Professor.LoginID;
+                    command.Parameters.Add(new SqlParameter("@loginid", System.Data.SqlDbType.Int)).Value = Professor.LoginID;
 
                     Professor.ProfessorID = (int)command.ExecuteScalar(); // o homem do saco leva os dados até o sgbd e volta com o valor do id => ExecuteScalar retorna um único valor. Observe que o CommandText foi alterado com mais uma instrução. Então, as duas instruções são executadas e temos como retorno o valor do id que foi gerado pelo sgbd na tabela Professor. Assim, conseguimos atualizar o valor do id do objeto Professor que antes da inserção era 0.
                 }
@@ -114,11 +114,11 @@ namespace web_app.Repositories.ADO.SQLServer
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "update Professor set nome = @nome, loginid = @loginid, professorid=@professorid;";
+                    command.CommandText = "update Professor set nome = @nome, loginid = @loginid where professorid=@professorid;";
 
                     command.Parameters.Add(new SqlParameter("@nome", System.Data.SqlDbType.VarChar)).Value = Professor.Nome;
-                    command.Parameters.Add(new SqlParameter("@loginid", System.Data.SqlDbType.Date)).Value = Professor.LoginID;
-                    command.Parameters.Add(new SqlParameter("@professorid", System.Data.SqlDbType.Int)).Value = professorid;
+                    command.Parameters.Add(new SqlParameter("@loginid", System.Data.SqlDbType.Int)).Value = Professor.LoginID;
+                    command.Parameters.Add(new SqlParameter("@professorid", System.Data.SqlDbType.Int)).Value = Professor.ProfessorID;
 
                     command.ExecuteNonQuery();
                 }

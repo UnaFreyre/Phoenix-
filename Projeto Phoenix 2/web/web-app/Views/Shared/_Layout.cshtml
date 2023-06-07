@@ -40,17 +40,14 @@
             <h1 class="logo me-auto">
                 <img src="~/lib/icon/android-chrome-192x192.png" alt="" class="img-fluid"><a href="index.html">Phoenix</a>
             </h1>
-
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="active color-teste" href="index.html">Home</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a asp-area="" asp-controller="Professor" asp-action="Index">Professor</a></li>
                 </ul>
             </nav>
             <!-- .navbar -->
 
-            <a href="login.html" class="get-started-btn backgroud-teste">Login</a>
-
+            <a class="get-started-btn backgroud-teste" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a>
         </div>
     </header>
     <div class="container">
@@ -62,9 +59,6 @@
        
     </main>
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - web_app - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -118,7 +112,7 @@
                 </div>
             </div>
         </div>
-
+       
         <div class="container d-md-flex py-4">
 
             <div class="me-md-auto text-center text-md-start">
@@ -137,6 +131,7 @@
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
         </div>
+    </footer>
         <!-- Vendor JS Arquivos -->
         <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
         <script src="assets/vendor/aos/aos.js"></script>

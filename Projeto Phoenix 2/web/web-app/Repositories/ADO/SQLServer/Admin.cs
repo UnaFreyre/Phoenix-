@@ -30,10 +30,28 @@ namespace web_app.Repositories.ADO.SQLServer
                 }
             }
         }
+        public void add(Models.Professor Professor)
+        {
+            using (SqlConnection connection = new SqlConnection(this.connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "insert into Professor (nome, loginid) values (@nome,@loginid); select convert(int,@@identity) as professorid;;";
+
+                    command.Parameters.Add(new SqlParameter("@nome", System.Data.SqlDbType.VarChar)).Value = Professor.Nome;
+                    command.Parameters.Add(new SqlParameter("@loginid", System.Data.SqlDbType.Int)).Value = Professor.LoginID;
+
+                    Professor.ProfessorID = (int)command.ExecuteScalar(); // o homem do saco leva os dados até o sgbd e volta com o valor do id => ExecuteScalar retorna um único valor. Observe que o CommandText foi alterado com mais uma instrução. Então, as duas instruções são executadas e temos como retorno o valor do id que foi gerado pelo sgbd na tabela Professor. Assim, conseguimos atualizar o valor do id do objeto Professor que antes da inserção era 0.
+                }
+            }
+        }
 
         public List<Models.Admin> get()
         {
-            List<Models.Admin> Admines = new List<Models.Admin>();
+            List<Models.Admin> admins = new List<Models.Admin>();
 
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
@@ -52,12 +70,12 @@ namespace web_app.Repositories.ADO.SQLServer
                         Admin.AdminID = (int)dr["Adminid"];
                         Admin.Nome = (string)dr["nome"];
                         Admin.LoginID = (int)dr["loginid"];
-                        Admines.Add(Admin);
+                        admins.Add(Admin);
                     }
                 }
             }
 
-            return Admines;
+            return admins;
         }
 
         public void delete(int Adminid)
@@ -124,5 +142,10 @@ namespace web_app.Repositories.ADO.SQLServer
                 }
             }
         }
+
+        //internal void add(Models.Professor professor)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

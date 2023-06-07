@@ -1,0 +1,1 @@
+insert into Login(Username,Password,TipoLoginID)values('a','a',1)

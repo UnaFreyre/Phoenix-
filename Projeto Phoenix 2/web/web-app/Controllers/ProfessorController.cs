@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using web_app.Filters;
 
 namespace web_app.Controllers
 {
+    [UsuarioLogado]
     public class ProfessorController : Controller
     {
         private readonly Repositories.ADO.SQLServer.Professor repository;
@@ -33,10 +35,12 @@ namespace web_app.Controllers
         // POST: ProfessorController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Models.Professor professor)
         {
             try
             {
+                this.repository.add(professor);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -46,18 +50,19 @@ namespace web_app.Controllers
         }
 
         // GET: ProfessorController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int professorid)
         {
-            return View();
+            return View(this.repository.getById(professorid));
         }
 
         // POST: ProfessorController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int professorid, Models.Professor professor)
         {
             try
             {
+                this.repository.update(professorid, professor);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -67,9 +72,10 @@ namespace web_app.Controllers
         }
 
         // GET: ProfessorController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int professorid)
         {
-            return View();
+            this.repository.delete(professorid);
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: ProfessorController/Delete/5
