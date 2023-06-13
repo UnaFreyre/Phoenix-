@@ -40,6 +40,32 @@ namespace web_app.Controllers
 
         //    return View(viewModel);
         //}
+        public ActionResult Delete(int professorid)
+        {
+            this.sProf.delete(professorid);
+            return RedirectToAction(nameof(Index));
+        }
+        // GET: ProfessorController/Edit/5
+        public ActionResult EditProf(int professorid)
+        {
+            return View(this.sProf.getById(professorid));
+        }
+
+        // POST: ProfessorController/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditProf(int professorid, Models.Professor professor)
+        {
+            try
+            {
+                this.sProf.update(professorid, professor);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
         public IActionResult Privacy()
         {
             return View();

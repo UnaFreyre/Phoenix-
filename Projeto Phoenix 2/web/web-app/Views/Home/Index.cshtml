@@ -12,18 +12,6 @@
 }
 
 <main id="main">
-    @if (ViewBag.id == 1)
-                    {
-                        <p>
-                            <a asp-action="Create"><button>IGUAL A 1</button></a>
-                        </p>
-                    }
-                    @if (ViewBag.id != 1)
-                    {
-                        <p>
-                            <a asp-action="Create"><button>DIFERENTE DE 1</button></a>
-                        </p>
-                    }
     <!-- ======= Seção ======= -->
     <!-- Renderize os dados dos professores -->
     @foreach (var conjunto in Model)
@@ -44,24 +32,159 @@
             <!-- Outras propriedades e marcações -->
         }
     }
-        @if (ViewBag.id == 1)
-             {
-                 <p>
-                     <a asp-action="Create"><button>adm</button></a>
-                 </p>
-             }
-        @if (ViewBag.id == 2)
+    @if (ViewBag.id == 1)
+         {
+             <p>
+                 <a asp-action="Create"><button>adm</button></a>
+             </p>
+         }
+    @if (ViewBag.id == 2)
         {
+            <section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row">
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="content">
+                    <h3>Professor</h3>
+                    <img src="~/images/perfilanon.jpeg" alt="">
+                    <p>Nome do ADM:</p>
+                    <p>Código:</p>
+                </div>
+            </div>
+            <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-boxes d-flex flex-column justify-content-center">
+                    <div class="row">
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <img src="~/images/fumaca.png" alt="">
+                                <h4>Cadastrar Professores:</h4>
+                                <a type="button" asp-action="create" class="btn btn-dark acessar mb-2">Cadastrar</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <img src="~/images/fumaca.png" alt="">
+                                <h4>Cadastrar Turmas:</h4>
+                                <button type="button" onclick="" class="btn btn-dark acessar">Cadastrar</button>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <img src="~/images/fumaca.png" alt="">
+                                <h4>Gerenciar Cargos:</h4>
+                                <button type="button" onclick="" class="btn btn-dark acessar">Gerenciar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Fim da .content-->
+            </div>
+        </div>
+
+    </div>
+</section><!-- Fim da Caixa -->
+<!-- ======= Seção de Recursos ======= -->
+<section id="features" class="features">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-lg-3 col-md-4">
+                <div class="icon-box">
+                    <i class="ri-file-list-3-line" style="color: #ffbb2c;"></i>
+                    <h3><a href="">Modificar Documentos</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                <div class="icon-box">
+                    <i class="ri-file-list-3-line" style="color: #5578ff;"></i>
+                    <h3><a href="">Modificar Registros</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                <div class="icon-box">
+                    <i class="ri-file-list-3-line" style="color: #e80368;"></i>
+                    <h3><a href="">Quadro de Avisos</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <i class="ri-file-list-3-line" style="color: #e361ff;"></i>
+                    <h3><a href="">Turmas</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="ri-file-list-3-line" style="color: #47aeff;"></i>
+                    <h3><a href="">Alterações de Login</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="ri-file-list-3-line" style="color: #bd43a8;"></i>
+                    <h3><a href="">Solicitações pendentes</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="ri-file-list-3-line" style="color: #ff5828;"></i>
+                    <h3><a href="">Modificação de Permissões</a></h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box">
+                    <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
+                    <h3><a href="">E-mails</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fim da Seção de Recursos -->
+        @foreach (var conjunto in Model)
+        {
+            <h3>Conjunto</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Professor</th>
+                        <th>Nome</th>
+                        <th>LoginID</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var professor in conjunto.Professores)
+                    {
+                        <tr>
+                            <td>
+                                @professor.ProfessorID
+                            </td>
+                            <td>
+                                @professor.Nome
+                            </td>
+                            <td>
+                                @professor.LoginID
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "EditProf", new { professorid=professor.ProfessorID }, new { @class = "btn btn-primary" }) |
+                                @Html.ActionLink("Delete", "Delete", new { professorid=professor.ProfessorID }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
             <p>
                 <a asp-action="Create"><button>prof</button></a>
             </p>
         }
-                            @if (ViewBag.id == 3)
-                    {
-                        <p>
-                            <a asp-action="Create"><button>estudnate</button></a>
-                        </p>
-                    }
+    @if (ViewBag.id == 3)
+        {
+             <p>
+                 <a asp-action="Create"><button>estudnate</button></a>
+             </p>
+        }
 
 <!-- Renderize os dados dos alunos -->
 @*    <section id="about" class="about">
