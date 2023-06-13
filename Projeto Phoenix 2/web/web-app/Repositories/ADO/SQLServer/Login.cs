@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Logging;
 
 namespace web_app.Repositories.ADO.SQLServer
 {
@@ -43,14 +44,14 @@ namespace web_app.Repositories.ADO.SQLServer
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select loginid from login where username=@username and password=@password";
-                    command.Parameters.Add(new SqlParameter("@username", System.Data.SqlDbType.VarChar)).Value = loginR.Username;
-                    command.Parameters.Add(new SqlParameter("@password", System.Data.SqlDbType.VarChar)).Value = loginR.Password;
+                    command.CommandText = "select TipoLoginID from login where Username=@Username and Password=@Password";
+                    command.Parameters.Add(new SqlParameter("@Username", System.Data.SqlDbType.VarChar)).Value = loginR.Username;
+                    command.Parameters.Add(new SqlParameter("@Password", System.Data.SqlDbType.VarChar)).Value = loginR.Password;
 
                     SqlDataReader dr = command.ExecuteReader();
                     if (dr.Read())
                     {
-                        login.LoginId = (int)dr["loginid"];
+                        login.LoginId = (int)dr["TipoLoginID"];
                     }
                 }
             }

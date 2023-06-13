@@ -1,19 +1,29 @@
 ﻿@model IEnumerable<web_app.Models.Conjunto>
 @using Newtonsoft.Json
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
     if (Context.Session.GetString("login") != null)
-        if (Context.Session.GetString("login") != null)
-        {
-            var valorSessao = Context.Session.GetString("login");
-            var login = JsonConvert.DeserializeObject<Login>(valorSessao);
-            int id = login.TipoLogin;
-            ViewBag.id = id;
-        }
+    {
+        var valorSessao = Context.Session.GetString("login");
+        var login = JsonConvert.DeserializeObject<Login>(valorSessao);
+        int id = login.LoginId; // Alteração: usar LoginID em vez de Id
+        ViewBag.id = id;
+    }
 }
 
 <main id="main">
-
+    @if (ViewBag.id == 1)
+                    {
+                        <p>
+                            <a asp-action="Create"><button>IGUAL A 1</button></a>
+                        </p>
+                    }
+                    @if (ViewBag.id != 1)
+                    {
+                        <p>
+                            <a asp-action="Create"><button>DIFERENTE DE 1</button></a>
+                        </p>
+                    }
     <!-- ======= Seção ======= -->
     <!-- Renderize os dados dos professores -->
     @foreach (var conjunto in Model)
@@ -34,6 +44,24 @@
             <!-- Outras propriedades e marcações -->
         }
     }
+        @if (ViewBag.id == 1)
+             {
+                 <p>
+                     <a asp-action="Create"><button>adm</button></a>
+                 </p>
+             }
+        @if (ViewBag.id == 2)
+        {
+            <p>
+                <a asp-action="Create"><button>prof</button></a>
+            </p>
+        }
+                            @if (ViewBag.id == 3)
+                    {
+                        <p>
+                            <a asp-action="Create"><button>estudnate</button></a>
+                        </p>
+                    }
 
 <!-- Renderize os dados dos alunos -->
 @*    <section id="about" class="about">
