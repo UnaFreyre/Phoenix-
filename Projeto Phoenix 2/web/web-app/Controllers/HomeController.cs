@@ -66,6 +66,26 @@ namespace web_app.Controllers
                 return View();
             }
         }
+        //Estudante edit
+        public ActionResult EditEstudante(int professorid)
+        {
+            return View(this.sProf.getById(professorid));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditEstudante(int professorid, Models.Professor professor)
+        {
+            try
+            {
+                this.sProf.update(professorid, professor);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
         public IActionResult Privacy()
         {
             return View();
