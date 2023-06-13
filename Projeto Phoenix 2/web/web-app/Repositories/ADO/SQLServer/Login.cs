@@ -32,6 +32,31 @@ namespace web_app.Repositories.ADO.SQLServer
 
             return result;
         }
+        public Models.Login pegarId(Models.Login loginR)
+        {
+            Models.Login login = new Models.Login();
+
+            using (SqlConnection connection = new SqlConnection(this.connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select loginid from login where username=@username and password=@password";
+                    command.Parameters.Add(new SqlParameter("@username", System.Data.SqlDbType.VarChar)).Value = loginR.Username;
+                    command.Parameters.Add(new SqlParameter("@password", System.Data.SqlDbType.VarChar)).Value = loginR.Password;
+
+                    SqlDataReader dr = command.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        login.LoginId = (int)dr["loginid"];
+                    }
+                }
+            }
+
+            return login;
+        }
 
     }
 }

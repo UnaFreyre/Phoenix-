@@ -121,23 +121,39 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProfessorID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LoginID)
-            </td>
-            <td>
-                    @Html.ActionLink("Edit", "Edit", new { professorid=item.ProfessorID }) |
-                @Html.ActionLink("Delete", "Delete", new { professorid=item.ProfessorID })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ProfessorID</th>
+                            <th>Nome</th>
+                            <th>LoginID</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProfessorID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nome)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LoginID)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { professorid=item.ProfessorID }, new { @class = "btn btn-primary" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { professorid=item.ProfessorID }, new { @class = "btn btn-danger" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

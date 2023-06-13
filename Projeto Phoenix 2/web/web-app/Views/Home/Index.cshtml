@@ -1,11 +1,42 @@
-﻿@{
+﻿@model IEnumerable<web_app.Models.Conjunto>
+@using Newtonsoft.Json
+@{
     ViewData["Title"] = "Home Page";
+    if (Context.Session.GetString("login") != null)
+        if (Context.Session.GetString("login") != null)
+        {
+            var valorSessao = Context.Session.GetString("login");
+            var login = JsonConvert.DeserializeObject<Login>(valorSessao);
+            int id = login.TipoLogin;
+            ViewBag.id = id;
+        }
 }
 
 <main id="main">
 
     <!-- ======= Seção ======= -->
-    <section id="about" class="about">
+    <!-- Renderize os dados dos professores -->
+    @foreach (var conjunto in Model)
+    {
+        <h3>Conjunto</h3>
+        @foreach (var professor in conjunto.Professores)
+        {
+            <p>@professor.Nome</p>
+            <!-- Outras propriedades e marcações -->
+        }
+    }
+        @foreach (var conjunto in Model)
+    {
+        <h3>Conjunto</h3>
+        @foreach (var estudante in conjunto.Estudantes)
+        {
+            <p>@estudante.Nome</p>
+            <!-- Outras propriedades e marcações -->
+        }
+    }
+
+<!-- Renderize os dados dos alunos -->
+@*    <section id="about" class="about">
         <div class="container" data-aos="fade-up">
 
             <div class="row">
@@ -31,6 +62,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>*@
     <!-- Fim Info Seção -->
 </main>
