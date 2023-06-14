@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- ======= Farelo de Pão ======= -->
+<div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+        <h2>Faça parte do nosso time.</h2>
+        <p>Envie-nos uma mensagem.</p>
+    </div>
+</div>
+<!-- Fim Farelo-->
+<!-- ======= Seção de Contato ======= -->
+<section id="contact" class="contact">
+    <div data-aos="fade-up">
+        <iframe style="border:0; width: 100%; height: 350px;"
+                src="https://maps.google.com/maps?width=650&amp;height=350&amp;hl=en&amp;q=Av.HabibGabriel,1360-JardimBuscardi,Matão&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" allowfullscreen></iframe>
+    </div>
+
+    <div class="container" data-aos="fade-up">
+
+        <div class="row mt-5">
+
+            <div class="col-lg-4">
+                <div class="info">
+                    <div class="address">
+                        <i class="bi bi-geo-alt"></i>
+                        <h4>Localização</h4>
+                        <p>
+                            Av. Habib Gabriel, 1360 - Jardim Buscardi, Matão <br>
+                            São Paulo, SP ,15990-539<br>
+                            Brasil
+                        </p>
+                    </div>
+
+                    <div class="email">
+                        <i class="bi bi-envelope"></i>
+                        <h4>Email:</h4>
+                        <p>contatophoenix@gmail.com</p>
+                    </div>
+
+                    <div class="phone">
+                        <i class="bi bi-phone"></i>
+                        <h4>Fone:</h4>
+                        <p>+55 16 2016 2694</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-8 mt-5 mt-lg-0">
+
+                <form action="forms/contact.php" method="post" class="php-email-form">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Seu Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" name="message" rows="5" placeholder="Messagem" required></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Enviar</button></div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Fim da Seção Contato -->
+
+<section id="trainers" class="trainers section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Team</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="acessar">
+                        <img src="~/images/trainer-1.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="member-content">
+                        <h4>Vitor Stanke</h4>
+                        <span>Desenvolvedor Web</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img acessar">
+                        <img src="~/images/trainer-2.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="member-content">
+                        <h4>Kamila Gomes</h4>
+                        <span>Designer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img acessar">
+                        <img src="~/images/trainer-3.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="member-content">
+                        <h4>Francisco Amoroso</h4>
+                        <span>Desenvolvedor Web</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

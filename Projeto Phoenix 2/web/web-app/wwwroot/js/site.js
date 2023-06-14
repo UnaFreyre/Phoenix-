@@ -149,10 +149,12 @@
         return false;
     }
 }*/
+//Mostrar tabela/esconder presença
 function mostrar() {
-    document.getElementsByClassName("escondido").style.display = "block";
+    document.getElementById("escondido").style.display = "block";
+    document.getElementById("escondido2").style.display = "none"
 }
 function esconder() {
     alert("Cadastrado com sucesso!");
-    document.getElementsByClassName("escondido").style.display = "none";
+    document.getElementById("escondido").style.display = "none";
 }

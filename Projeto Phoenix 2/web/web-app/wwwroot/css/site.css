@@ -1658,3 +1658,6 @@ div a i {
     color: #fff;
     margin-top: 5px;
 }
+#escondido{
+    display: none;
+}

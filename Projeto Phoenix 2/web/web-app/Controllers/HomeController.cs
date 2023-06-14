@@ -45,6 +45,38 @@ namespace web_app.Controllers
             this.sProf.delete(professorid);
             return RedirectToAction(nameof(Index));
         }
+        //Professor Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Models.Professor professor)
+        {
+            try
+            {
+                sProf.add(professor);
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateProf(Models.Professor professor)
+        {
+            try
+            {
+                sProf.add(professor);
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        //Professor Edit
         // GET: ProfessorController/Edit/5
         public ActionResult EditProf(int professorid)
         {

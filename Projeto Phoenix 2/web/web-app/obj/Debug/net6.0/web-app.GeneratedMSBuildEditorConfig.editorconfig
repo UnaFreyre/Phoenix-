@@ -9,85 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = web_app
 build_property.RootNamespace = web_app
-build_property.ProjectDir = C:\Users\2971392221013\Desktop\projeto gay\Phoenix-\Projeto Phoenix 2\web\web-app\
+build_property.ProjectDir = C:\Users\Vitor\Documents\GitHub\Phoenix\Phoenix-\Projeto Phoenix 2\web\web-app\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\2971392221013\Desktop\projeto gay\Phoenix-\Projeto Phoenix 2\web\web-app
+build_property.MSBuildProjectDirectory = C:\Users\Vitor\Documents\GitHub\Phoenix\Phoenix-\Projeto Phoenix 2\web\web-app
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Admin/Index.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Admin/ProfCreate.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Admin/ProfCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZkNyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Carros/Create.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Carros/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycm9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Carros/Edit.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Carros/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycm9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Carros/Index.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Carros/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycm9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/Create.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Contato/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/EditEstudante.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/CreateProf.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVQcm9mLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/EditEstudante.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0RXN0dWRhbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/EditProf.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/EditProf.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0UHJvZi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/Index.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/Privacy.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Login/Login.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Professor/Create.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Professor/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Professor/Edit.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Professor/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Professor/Index.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Professor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Shared/Error.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/_ViewImports.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/_ViewStart.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2971392221013/Desktop/projeto gay/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Shared/_Layout.cshtml]
+[C:/Users/Vitor/Documents/GitHub/Phoenix/Phoenix-/Projeto Phoenix 2/web/web-app/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2ocj97iyta
