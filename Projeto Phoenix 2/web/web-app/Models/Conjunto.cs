@@ -4,5 +4,10 @@
     {
         public IEnumerable<Professor> Professores { get; set; }
         public IEnumerable<Estudante> Estudantes { get; set; }
+        public IEnumerable<Admin> Admins { get; set; }
+        public IEnumerable<Login> Logins { get; set; }
+        public IEnumerable<Curso> cursos { get; set; }
+
+
     }
 }

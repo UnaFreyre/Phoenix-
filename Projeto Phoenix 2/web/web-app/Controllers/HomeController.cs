@@ -46,21 +46,13 @@ namespace web_app.Controllers
             return RedirectToAction(nameof(Index));
         }
         //Professor Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Models.Professor professor)
+        // GET: ProfessorController/Create
+        public ActionResult CreateProf()
         {
-            try
-            {
-                sProf.add(professor);
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
+
+        // POST: ProfessorController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateProf(Models.Professor professor)
