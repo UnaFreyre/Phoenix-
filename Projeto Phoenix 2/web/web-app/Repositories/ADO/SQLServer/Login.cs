@@ -31,6 +31,25 @@ namespace web_app.Repositories.ADO.SQLServer
                 }
             }
         }
+        public void update(int loginid, Models.Login Login)
+        {
+            using (SqlConnection connection = new SqlConnection(this.connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "update login set username = @username, password = @password, tipologinid=@tipologinid where loginid=@loginid;";
+
+                    command.Parameters.Add(new SqlParameter("@username", System.Data.SqlDbType.VarChar)).Value = Login.Username;
+                    command.Parameters.Add(new SqlParameter("@password", System.Data.SqlDbType.VarChar)).Value = Login.Password;
+                    command.Parameters.Add(new SqlParameter("@tipologinid", System.Data.SqlDbType.Int)).Value = Login.TipoLogin;
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
         public List<Models.Login> get()
         {
             List<Models.Login> logins = new List<Models.Login>();
@@ -60,6 +79,22 @@ namespace web_app.Repositories.ADO.SQLServer
 
             return logins;
         }
+        public void delete(int loginid)
+        {
+            using (SqlConnection connection = new SqlConnection(this.connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "delete from login where loginid = @loginid;";
+                    command.Parameters.Add(new SqlParameter("@loginid", System.Data.SqlDbType.Int)).Value = loginid;
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
         public bool check(Models.Login login)
         {
             bool result = false;
@@ -81,6 +116,34 @@ namespace web_app.Repositories.ADO.SQLServer
             }
 
             return result;
+        }
+        public Models.Login getById(int loginid) //somente 1 Estudante.
+        {
+            Models.Login login = new Models.Login();
+
+            using (SqlConnection connection = new SqlConnection(this.connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select loginid, username ,password, tipologinid from login where loginid=@loginid;";
+                    command.Parameters.Add(new SqlParameter("@loginid", System.Data.SqlDbType.Int)).Value = loginid;
+
+                    SqlDataReader dr = command.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        login.LoginId = (int)dr["loginid"];
+                        login.Username = (string)dr["username"];
+                        login.Password = (string)dr["password"];
+                        login.TipoLogin = (int)dr["tipologinid"];
+                    }
+                }
+            }
+
+            return login;
         }
         public Models.Login pegarId(Models.Login loginR)
         {

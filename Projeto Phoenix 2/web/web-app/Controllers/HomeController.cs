@@ -48,6 +48,16 @@ namespace web_app.Controllers
             this.sProf.delete(professorid);
             return RedirectToAction(nameof(Index));
         }
+        public ActionResult DeleteE(int estudanteid)
+        {
+            this.sEstudante.delete(estudanteid);
+            return RedirectToAction(nameof(Index));
+        }
+        public ActionResult DeleteL(int loginid)
+        {
+            this.sLogin.delete(loginid);
+            return RedirectToAction(nameof(Index));
+        }
         //Professor Create
         // GET: ProfessorController/Create
         public ActionResult CreateProf()
@@ -135,6 +145,25 @@ namespace web_app.Controllers
                 return View();
             }
         }
+        public ActionResult EditLogin(int loginid)
+        {
+            return View(this.sLogin.getById(loginid));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditLogin(int loginid, Models.Login login)
+        {
+            try
+            {
+                this.sLogin.update(loginid, login);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
         //Estudante edit
         public ActionResult EditEstudante(int estudanteid)
         {
@@ -155,6 +184,7 @@ namespace web_app.Controllers
                 return View();
             }
         }
+
         public IActionResult Privacy()
         {
             return View();

@@ -178,7 +178,7 @@
                             </td>
                             <td>
                                 @Html.ActionLink("Editar", "EditLogin", new { loginid=item.LoginId }, new { @class = "btn btn-primary" }) |
-                                @Html.ActionLink("Delete", "Delete", new { loginid=item.LoginId }, new { @class = "btn btn-danger" })
+                                @Html.ActionLink("Delete", "DeleteL", new { loginid=item.LoginId }, new { @class = "btn btn-danger" })
                             </td>
                         </tr>
                     }
@@ -246,7 +246,7 @@
                             </td>
                             <td>
                                 @Html.ActionLink("Editar", "EditEstudante", new { estudanteid=estudante.EstudanteID }, new { @class = "btn btn-primary" }) |
-                                @Html.ActionLink("Delete", "Delete", new { estudanteid=estudante.EstudanteID }, new { @class = "btn btn-danger" })
+                                @Html.ActionLink("Delete", "DeleteE", new { estudanteid=estudante.EstudanteID }, new { @class = "btn btn-danger" })
                             </td>
                         </tr>
                     }
