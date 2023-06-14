@@ -10,11 +10,13 @@ namespace web_app.Controllers
     {
         private readonly Repositories.ADO.SQLServer.Professor sProf;
         private readonly Repositories.ADO.SQLServer.Estudante sEstudante;
+        private readonly Repositories.ADO.SQLServer.Login sLogin;
         private readonly ILogger<HomeController> _logger;
         public HomeController(IConfiguration configuration) // objeto configuration => parte do framework que permite ler o arquivo appsettings.json - GetConnectionString => método do framework que permite ler a chave ConnectionStrings deste arquivo.
         {
             this.sProf = new Repositories.ADO.SQLServer.Professor(configuration.GetConnectionString(Configurations.Appsettings.getKeyConnectionString()));
             this.sEstudante = new Repositories.ADO.SQLServer.Estudante(configuration.GetConnectionString(Configurations.Appsettings.getKeyConnectionString()));
+            this.sLogin = new Repositories.ADO.SQLServer.Login(configuration.GetConnectionString(Configurations.Appsettings.getKeyConnectionString()));
             //Configurations.Appsettings.getKeyConnectionString => nossa classe de configuração para trazer a chave que deve ser lida, neste caso: DefaultConnection.
         }
         //public HomeController(ILogger<HomeController> logger)
@@ -28,6 +30,7 @@ namespace web_app.Controllers
             var conjunto = new Conjunto();
             conjunto.Professores = sProf.get();
             conjunto.Estudantes = sEstudante.get();
+            conjunto.Logins = sLogin.get();
             viewModel.Add(conjunto); // Adiciona o objeto Conjunto à lista
 
             return View(viewModel);
@@ -113,19 +116,38 @@ namespace web_app.Controllers
                 return View();
             }
         }
-        //Estudante edit
-        public ActionResult EditEstudante(int professorid)
+        public ActionResult CreateLogin()
         {
-            return View(this.sProf.getById(professorid));
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateLogin(Models.Login login)
+        {
+            try
+            {
+                sLogin.Add(login);
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        //Estudante edit
+        public ActionResult EditEstudante(int estudanteid)
+        {
+            return View(this.sEstudante.getById(estudanteid));
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditEstudante(int professorid, Models.Professor professor)
+        public ActionResult EditEstudante(int estudanteid, Models.Estudante estudante)
         {
             try
             {
-                this.sProf.update(professorid, professor);
+                this.sEstudante.update(estudanteid, estudante);
                 return RedirectToAction(nameof(Index));
             }
             catch

@@ -71,8 +71,8 @@
                             <div class="col-xl-4 d-flex align-items-stretch">
                                 <div class="icon-box mt-4 mt-xl-0">
                                     <img src="~/images/fumaca.png" alt="">
-                                    <h4>Curso</h4>
-                                    <a type="button" asp-action="cursocreate" asp-controller="admin" class="btn btn-dark acessar mb-2">Cadastrar</a>
+                                    <h4>Login</h4>
+                                    <a type="button" asp-action="Createlogin" asp-controller="home" class="btn btn-dark acessar mb-2">Cadastrar</a>
 @*                                    <button type="button" onclick="" class="btn btn-dark acessar mb-2">Gerenciar</button>*@
                                 </div>
                             </div>
@@ -150,6 +150,43 @@
         <!-- Fim da Seção de Recursos -->
         @foreach (var conjunto in Model)
         {
+            <h3>Logins</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Usuário</th>
+                        <th>Senha</th>
+                        <th>Tipo do login</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in conjunto.Logins)
+                    {
+                        <tr>
+                            <td>
+                                @item.LoginId
+                            </td>
+                            <td>
+                                @item.Username
+                            </td>
+                            <td>
+                                @item.Password
+                            </td>
+                            <td>
+                                @item.TipoLogin
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "EditLogin", new { loginid=item.LoginId }, new { @class = "btn btn-primary" }) |
+                                @Html.ActionLink("Delete", "Delete", new { loginid=item.LoginId }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        @foreach (var conjunto in Model)
+        {
             <h3>Professores</h3>
             <table class="table table-bordered">
                 <thead>
@@ -208,7 +245,7 @@
                                 @estudante.LoginID
                             </td>
                             <td>
-                                @Html.ActionLink("Editar", "EditProf", new { estudanteid=estudante.EstudanteID }, new { @class = "btn btn-primary" }) |
+                                @Html.ActionLink("Editar", "EditEstudante", new { estudanteid=estudante.EstudanteID }, new { @class = "btn btn-primary" }) |
                                 @Html.ActionLink("Delete", "Delete", new { estudanteid=estudante.EstudanteID }, new { @class = "btn btn-danger" })
                             </td>
                         </tr>
