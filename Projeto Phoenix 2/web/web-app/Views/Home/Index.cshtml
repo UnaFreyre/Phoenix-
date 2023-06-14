@@ -55,7 +55,7 @@
                                 <div class="icon-box mt-4 mt-xl-0">
                                     <img src="~/images/fumaca.png" alt="">
                                     <h4>Estudante:</h4>
-                                    <a type="button" asp-action="EstudanteCreate" asp-controller="home" class="btn btn-dark acessar mb-2">Cadastrar</a>
+                                    <a type="button" asp-action="CreateEstu" asp-controller="home" class="btn btn-dark acessar mb-2">Cadastrar</a>
 @*                                    <li><a asp-area="" asp-controller="Professor" asp-action="Index">Professor</a></li>*@
 @*                                    <button type="button" onclick="" class="btn btn-dark acessar mb-2"></button>*@
                                 </div>
@@ -150,13 +150,13 @@
         <!-- Fim da Seção de Recursos -->
         @foreach (var conjunto in Model)
         {
-            <h3>Conjunto</h3>
+            <h3>Professores</h3>
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Professor</th>
                         <th>Nome</th>
-                        <th>LoginID</th>
+                        <th>Digito</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -182,9 +182,40 @@
                 </tbody>
             </table>
         }
-             <p>
-                 <a asp-action="Create"><button>adm</button></a>
-             </p>
+        @foreach (var conjunto in Model)
+        {
+            <h3>Estudantes</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Estudante</th>
+                        <th>Nome</th>
+                        <th>Digito</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var estudante in conjunto.Estudantes)
+                    {
+                        <tr>
+                            <td>
+                                @estudante.EstudanteID
+                            </td>
+                            <td>
+                                @estudante.Nome
+                            </td>
+                            <td>
+                                @estudante.LoginID
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "EditProf", new { estudanteid=estudante.EstudanteID }, new { @class = "btn btn-primary" }) |
+                                @Html.ActionLink("Delete", "Delete", new { estudanteid=estudante.EstudanteID }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
          }
     @*Professor*@
     @if (ViewBag.id == 2)
@@ -247,7 +278,6 @@
                                             <th><span>R.A</span></th>
                                             
                                             <th class="text-center"><span>Presença</span></th>
-                                            <th class="text-center"><span>Média</span></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -263,9 +293,6 @@
                                                     
                                                     <td class="text-center">
                                                         <input type="checkbox">
-                                                    </td>
-                                                    <td>
-                                                        <span class="mediatexto">Média</span>
                                                     </td>
                                             
                                                 </tr>
@@ -347,44 +374,6 @@
     </div>
 </section>
 <!-- Fim da Seção de Recursos -->
-        @foreach (var conjunto in Model)
-        {
-            <h3>Conjunto</h3>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Professor</th>
-                        <th>Nome</th>
-                        <th>LoginID</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var professor in conjunto.Professores)
-                    {
-                        <tr>
-                            <td>
-                                @professor.ProfessorID
-                            </td>
-                            <td>
-                                @professor.Nome
-                            </td>
-                            <td>
-                                @professor.LoginID
-                            </td>
-                            <td>
-                                @Html.ActionLink("Editar", "EditProf", new { professorid=professor.ProfessorID }, new { @class = "btn btn-primary" }) |
-                                @Html.ActionLink("Delete", "Delete", new { professorid=professor.ProfessorID }, new { @class = "btn btn-danger" })
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        }
-
-            <p>
-                <a asp-action="Create"><button>prof</button></a>
-            </p>
         }
     @*Estudante*@
     @if (ViewBag.id == 3)

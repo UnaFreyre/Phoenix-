@@ -68,6 +68,7 @@ namespace web_app.Controllers
                 return View();
             }
         }
+
         //Professor Edit
         // GET: ProfessorController/Edit/5
         public ActionResult EditProf(int professorid)
@@ -83,6 +84,28 @@ namespace web_app.Controllers
             try
             {
                 this.sProf.update(professorid, professor);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        //Estudante Create
+        public ActionResult CreateEstu()
+        {
+            return View();
+        }
+
+        // POST: ProfessorController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateEstu(Models.Estudante estudante)
+        {
+            try
+            {
+                sEstudante.add(estudante);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
